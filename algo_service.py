@@ -16,6 +16,10 @@ def get_frame():
     global image_index
     #解析图片数据
     img = base64.b64decode(str(request.form['image']))
+    password = request.form["password"]
+    user = request.form["user"]
+
+    print("   user : {}, password : {}".format(user,password))
 
     image_data = np.fromstring(img, np.uint8)
     image_data = cv2.imdecode(image_data, cv2.IMREAD_COLOR)

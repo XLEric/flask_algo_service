@@ -21,7 +21,11 @@ if __name__ == "__main__":
         #将图片数据转成base64格式
         img = base64.b64encode(img_str)
 
-        params = {"image":img}
+        params = {
+            "image" : img,
+            "password": 123456,
+            "user" : 'eric',
+            }
         request_url = "http://localhost:"+"6666" + "/register"
 
         r = requests.post(request_url, data=params)

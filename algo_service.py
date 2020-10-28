@@ -39,6 +39,7 @@ if __name__ == "__main__":
     #多进程或多线程只能选择一个，不能同时开启
     # threaded=True
     # processes=True
+    # 如果需要在通过flask 在不同计算机进行通信， host 需要设置为 0.0.0.0
     app.run(
         host = "localhost",
         port= 6666,

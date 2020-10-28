@@ -36,8 +36,12 @@ def get_frame():
             }
     return Response(json.dumps(dict_),  mimetype='application/json')
 if __name__ == "__main__":
+    #多进程或多线程只能选择一个，不能同时开启
+    # threaded=True
+    # processes=True
     app.run(
         host = "localhost",
         port= 6666,
         debug = False,
+        threaded = True,
         )

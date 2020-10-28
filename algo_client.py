@@ -26,7 +26,11 @@ if __name__ == "__main__":
             "password": 123456,
             "user" : 'eric',
             }
-        request_url = "http://localhost:"+"6666" + "/register"
+
+        # 如果需要在通过flask 在不同计算机进行通信， host 需要设置为 service ip v4
+        host = "http://localhost:"
+        port = "6666"
+        request_url = host + port + "/register"
 
         r = requests.post(request_url, data=params)
 
